@@ -21,6 +21,7 @@ const CharacterPage = ({character}:{
         <p>{`Species: ${character.species}`}</p>
         <p>{`Gender: ${character.gender}`}</p>
         <p>{`Status: ${character.status}`}</p>
+        <p>{`Character Origin: ${character.origin.name}`}</p>
         <p>{`Current Location: ${character.location.name}`}</p>
 
     </div>

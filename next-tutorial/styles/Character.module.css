@@ -2,20 +2,31 @@
     background-color: #f2f2f2;
     display:grid;
     justify-content: center;
+    justify-items:center;
     text-align:center;
     
 
 }
 .container > h1{
     font-family:helvetica;
-    font-size:60px;
+    font-size:100px;
     text-decoration-line:underline;
+    color:orange;
+    padding:10px;
 
 
 }
 .container > p{
-    font-family:helvetica;
+    font-family:monospace;
     font-size:20px;
+    
+
+
+}
+.container > p:hover{
+    font-family:monospace;
+    font-size:22px;
+    color:orange;
     
 
 

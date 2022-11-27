@@ -36,7 +36,8 @@ const Home:NextPage<{characters:Character[]}> = ({characters}) => {
   )
 }
 export const getStaticProps: GetStaticProps = async (bollocks)=> {
-  const res = await fetch ('https://rickandmortyapi.com/api/character')
+  const params = new URLSearchParams({ page: "1" }).toString()
+  const res = await fetch (`https://rickandmortyapi.com/api/character?${params}`)
   const{results}: GetCharacterResults  = await res.json();
  return {
   props:{
