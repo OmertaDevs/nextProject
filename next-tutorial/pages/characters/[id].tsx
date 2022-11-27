@@ -1,38 +1,38 @@
+import { GetServerSideProps } from 'next';
 import Image from 'next/image'
 import imageLoader from "../../imageloader"
-import { GetCharacterResults, Character } from "../../types";
+import {useRouter} from "next/router";
+import {Character} from "../../types";
+import Layout from "../../components/layout"
+import styles from "../../styles/Character.module.css"
 
 const CharacterPage = ({character}:{
     character:Character}) =>{
-    return <div>
+        const router = useRouter()
+    return <div className={styles.container}>
         <h1>{character.name}</h1>
         <Image 
         loader={imageLoader}
         unoptimized
         src={character.image}
         alt={character.name}
-        width="200"
-        height="200"/>
+        width="400"
+        height="400"/>
+        <p>{`Species: ${character.species}`}</p>
+        <p>{`Gender: ${character.gender}`}</p>
+        <p>{`Status: ${character.status}`}</p>
+        <p>{`Current Location: ${character.location.name}`}</p>
 
     </div>
 
 }
 
-export async function getStaticPaths(){
-    const res = await fetch("https://rickandmortyapi.com/api/character");
-    const{results}: GetCharacterResults  = await res.json();
-    return {
-     paths: results.map((character)=>{
-        return {params: {id: String(character.id)}};
-     }),
-     fallback: false,
-    };
+CharacterPage.getLayout = function getLayout(page: typeof CharacterPage){
+    return <Layout>{page}</Layout>
 }
 
-export async function getStaticProps({params}:{params:{id: string}
-
-}){
-    const res = await fetch(`https://rickandmortyapi.com/api/character/${params.id}`
+export const getServerSideProps:GetServerSideProps = async (bollocks) => {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/${bollocks.query.id}`
 
     );
     const character = await res.json()

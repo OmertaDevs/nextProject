@@ -1,0 +1,22 @@
+.container{
+    background-color: #f2f2f2;
+    display:grid;
+    justify-content: center;
+    text-align:center;
+    
+
+}
+.container > h1{
+    font-family:helvetica;
+    font-size:60px;
+    text-decoration-line:underline;
+
+
+}
+.container > p{
+    font-family:helvetica;
+    font-size:20px;
+    
+
+
+}

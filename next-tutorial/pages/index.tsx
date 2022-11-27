@@ -18,15 +18,15 @@ const Home:NextPage<{characters:Character[]}> = ({characters}) => {
       {characters.map((character)=>{
         return <div key={character.id}>
           <Link href={`/characters/${character.id}`}>
-            <h3>{character.name}</h3>
+            <h1>{character.name}</h1>
           </Link>
         <Image
         loader ={imageLoader}
         unoptimized
         src={character.image}
         alt={character.name}
-        width="200"
-        height="200"
+        width="400"
+        height="400"
         />
 
           </div>

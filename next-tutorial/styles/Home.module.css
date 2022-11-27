@@ -1,5 +1,14 @@
 .container {
   padding: 0 2rem;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  row-gap:100px;
+  background-color:#f2f2f2;
+  justify-content:center;
+}
+.container > h1{
+  font-family: monospace;
+
 }
 
 .main {
